@@ -8,13 +8,9 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    BaseButton: typeof import('./core/BaseButton.vue')['default']
-    BaseDropdown: typeof import('./core/BaseDropdown.vue')['default']
+    BaseButton: typeof import('./../components/core/BaseButton.vue')['default']
+    BaseDropdown: typeof import('./../components/core/BaseDropdown.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    VApp: typeof import('vuetify/lib')['VApp']
-    VContainer: typeof import('vuetify/lib')['VContainer']
-    VImg: typeof import('vuetify/lib')['VImg']
-    VMain: typeof import('vuetify/lib')['VMain']
   }
 }

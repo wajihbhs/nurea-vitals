@@ -15,8 +15,17 @@ export default defineConfig({
       dirs: ["src/components/core"],
       extensions: ["vue"],
       deep: true,
-      dts: "src/components/core.d.ts",
+      dts: "src/plugins/core.d.ts",
       directoryAsNamespace: false,
     }),
   ],
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:3333",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, "")
+      }
+    }
+  }
 })
