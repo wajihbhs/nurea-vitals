@@ -1,3 +1,7 @@
 {
-  "app-name": "Nurea App"
+  "app-name": "Nurea App",
+  "languages": {
+    "en": "Englais",
+    "fr": "Français"
+  }
 }

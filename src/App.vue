@@ -1,13 +1,14 @@
-<script setup lang="ts">
-import VitalApp from "./components/VitalApp.vue";
-</script>
-
 <template>
-  <v-app>
+  <v-app class="bg-grey-lighten-4">
+    <app-header />
     <v-main>
-      <v-container class="d-flex justify-center">
-        <vital-app :msg="$t($t('app-name'))"/>
+      <v-container fluid>
+        <router-view />
       </v-container>
     </v-main>
   </v-app>
 </template>
+
+<script setup lang="ts">
+import AppHeader from "./components/AppHeader.vue";
+</script>
