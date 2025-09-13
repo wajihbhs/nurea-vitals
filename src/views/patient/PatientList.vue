@@ -1,0 +1,76 @@
+<script setup lang="ts">
+import type { Patient } from "../../types";
+import { useIntervalFn } from "@vueuse/core";
+import { ref, computed, onMounted } from "vue";
+import { usePatientsStore } from "../../stores/patients.ts";
+
+const store = usePatientsStore();
+const search = ref("");
+
+const filtered = computed((): Patient[] =>
+  store.patients.filter((p) => {
+    const patientToSearch =
+      `${p.firstName} ${p.lastName} ${p.medicalRecordNumber}`.toLowerCase();
+
+    return patientToSearch.includes(search.value.toLowerCase());
+  }),
+);
+
+const last = (vitalValue: number[]) => {
+  return vitalValue && vitalValue.length
+    ? vitalValue[vitalValue.length - 1]
+    : "-";
+};
+
+onMounted(() => {
+  store.fetchPatients();
+});
+
+useIntervalFn(() => {
+  store.fetchPatients();
+}, 60000);
+</script>
+
+<template>
+  <v-container>
+    <v-text-field
+      v-model="search"
+      :placeholder="$t('views.patients.search-placeholder')"
+    >
+      <template #append>
+        <v-icon>mdi-magnify</v-icon>
+      </template>
+    </v-text-field>
+    <v-row v-if="store.loading">
+      <v-col cols="12" md="4" v-for="n in 6" :key="n">
+        <v-skeleton-loader type="card" class="pa-3" />
+      </v-col>
+    </v-row>
+    <v-row v-else>
+      <v-col cols="12" md="4" v-for="p in filtered" :key="p.id">
+        <v-card class="pa-3">
+          <v-row align="center">
+            <v-col cols="4">
+              <v-img
+                :src="`https://ui-avatars.com/api/?name=${p.firstName}+${p.lastName}&size=128&background=random`"
+                aspect-ratio="1"
+                class="rounded"
+              />
+            </v-col>
+            <v-col cols="8">
+              <div class="text-h6">{{ p.firstName }} {{ p.lastName }}</div>
+              <div class="text-subtitle-2">
+                MRN: {{ p.medicalRecordNumber }}
+              </div>
+            </v-col>
+          </v-row>
+          <v-divider class="my-2" />
+          <div class="d-flex justify-center">
+            HR: {{ last(p.vitals.heartRate) }} bpm — Temp:
+            {{ last(p.vitals.temperature) }}°C
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>

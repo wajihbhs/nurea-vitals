@@ -3,5 +3,11 @@
   "languages": {
     "en": "Englais",
     "fr": "Français"
+  },
+  "views": {
+    "patients": {
+      "title": "Patients",
+      "search-placeholder": "Recherche par nom ou MRN"
+    }
   }
 }
