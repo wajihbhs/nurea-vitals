@@ -7,7 +7,28 @@
   "views": {
     "patients": {
       "title": "Patients",
-      "search-placeholder": "Recherche par nom ou MRN"
+      "search-placeholder": "Recherche par nom ou MRN",
+      "status": {
+        "watch": "surveillance",
+        "stable": "stable",
+        "critical": "critique"
+      }
+    }
+  },
+  "alerts": {
+    "titles": {
+      "global": "Alerte critique",
+      "temperature": "Alerte température",
+      "heartRate": "Alerte rythme cardiaque",
+      "bloodPressure": "Alerte tension artérielle",
+      "default": "Alerte"
+    },
+    "messages": {
+      "global": "{name} est en état critique",
+      "temperature": "{name} température anormale : {value}°C",
+      "heartRate": "{name} rythme cardiaque anormal : {value} bpm",
+      "bloodPressure": "{name} tension artérielle anormale : {systolic}/{diastolic}",
+      "default": "{name} statut anormal détecté"
     }
   }
 }

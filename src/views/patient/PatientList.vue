@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { Patient } from "../../types";
+import { CRITICAL_STATUS, WATCH_STATUS } from "../../types";
 import { useIntervalFn } from "@vueuse/core";
-import { ref, computed, onMounted } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { usePatientsStore } from "../../stores/patients.ts";
 
 const store = usePatientsStore();
@@ -15,11 +16,13 @@ const filtered = computed((): Patient[] =>
     return patientToSearch.includes(search.value.toLowerCase());
   }),
 );
-
-const last = (vitalValue: number[]) => {
-  return vitalValue && vitalValue.length
-    ? vitalValue[vitalValue.length - 1]
-    : "-";
+const statusColor = (p: Patient) => {
+  const s = store.getPatientStatus(p);
+  return s === CRITICAL_STATUS
+    ? "red"
+    : s === WATCH_STATUS
+      ? "orange"
+      : "green";
 };
 
 onMounted(() => {
@@ -62,12 +65,18 @@ useIntervalFn(() => {
               <div class="text-subtitle-2">
                 MRN: {{ p.medicalRecordNumber }}
               </div>
+              <div class="d-flex align-center justify-space-between w-75">
+                <span :class="`text-capitalize text-${statusColor(p)}`">
+                  {{ $t(`views.patients.status.${store.getPatientStatus(p)}`) }}
+                </span>
+                <v-badge :color="statusColor(p)" rounded />
+              </div>
             </v-col>
           </v-row>
           <v-divider class="my-2" />
           <div class="d-flex justify-center">
-            HR: {{ last(p.vitals.heartRate) }} bpm — Temp:
-            {{ last(p.vitals.temperature) }}°C
+            HR: {{ store.lastVitalRate(p.vitals.heartRate) }} bpm — Temp:
+            {{ store.lastVitalRate(p.vitals.temperature) }}°C
           </div>
         </v-card>
       </v-col>

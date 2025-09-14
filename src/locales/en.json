@@ -7,7 +7,28 @@
   "views": {
     "patients": {
       "title": "Patients",
-      "search-placeholder": "Search by name or MRN"
+      "search-placeholder": "Search by name or MRN",
+      "status": {
+        "watch": "watch",
+        "stable": "stable",
+        "critical": "critical"
+      }
+    }
+  },
+  "alerts": {
+    "titles": {
+      "global": "Critical Alert",
+      "temperature": "Temperature Alert",
+      "heart-rate": "Heart Rate Alert",
+      "blood-pressure": "Blood Pressure Alert",
+      "default": "Alert"
+    },
+    "messages": {
+      "global": "{name} is in CRITICAL condition",
+      "temperature": "{name} abnormal temperature: {value}°C",
+      "heart-rate": "{name} abnormal heart rate: {value} bpm",
+      "blood-pressure": "{name} abnormal blood pressure: {systolic}/{diastolic}",
+      "default": "{name} abnormal status detected"
     }
   }
 }

@@ -1,6 +1,17 @@
+export const CRITICAL_STATUS = "critical";
+export const STABLE_STATUS = "stable";
+export const WATCH_STATUS = "watch";
+
 export interface BloodPressure {
   systolic: number;
   diastolic: number;
+}
+
+export interface Alert {
+  patient: Patient;
+  type: "global" | "temperature" | "heartRate" | "bloodPressure";
+  value?: number | string;
+  level: "critical" | "watch";
 }
 
 export interface Vitals {
