@@ -97,9 +97,8 @@ const chartOptions = (title: string, yTitle: string, seriesData: number[]) => ({
           </v-col>
         </v-row>
       </v-card-text>
-      <v-card-actions>
-        <v-spacer />
-        <v-btn color="primary" text @click="dialogOpen = false">
+      <v-card-actions class="d-flex justify-center">
+        <v-btn color="primary" variant="flat" @click="dialogOpen = false">
           {{ $t("actions.close") }}
         </v-btn>
       </v-card-actions>
