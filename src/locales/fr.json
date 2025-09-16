@@ -7,7 +7,18 @@
   "actions": {
     "update": "Modifier",
     "cancel": "Annuler",
-    "save": "Enregistrer"
+    "save": "Enregistrer",
+    "details": "Details"
+  },
+  "charts": {
+    "heart-rate": "Fréquence cardiaque",
+    "temperature": "Température",
+    "blood-pressure": "Pression artérielle",
+    "unit": {
+      "bpm": "bpm",
+      "celsius": "°C",
+      "mmHg": "mmHg"
+    }
   },
   "views": {
     "patients": {

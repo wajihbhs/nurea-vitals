@@ -5,12 +5,19 @@ import { useIntervalFn } from "@vueuse/core";
 import { computed, onMounted, ref } from "vue";
 import { usePatientsStore } from "../../stores/patients.ts";
 import PatientDialogEdit from "./PatientDialogEdit.vue";
+import PatientDialogDetails from "./PatientDialogDetails.vue";
 
 const store = usePatientsStore();
 const search = ref("");
 const editDialogOpen = ref(false);
 const selectedPatient = ref<Patient | null>(null);
 
+const detailsDialogOpen = ref(false);
+
+const openDetailsDialog = (p: Patient) => {
+  selectedPatient.value = p;
+  detailsDialogOpen.value = true;
+}
 const openEditDialog = (p: Patient) => {
   selectedPatient.value = p;
   editDialogOpen.value = true;
@@ -93,10 +100,15 @@ useIntervalFn(() => {
             HR: {{ store.lastVitalRate(p.vitals.heartRate) }} bpm — Temp:
             {{ store.lastVitalRate(p.vitals.temperature) }}°C
           </div>
-          <v-card-actions>
+          <v-divider class="my-2" />
+          <v-card-actions class="justify-center">
             <v-btn color="primary" variant="tonal" @click="openEditDialog(p)">
               <v-icon start>mdi-pencil</v-icon>
               {{ $t("actions.update") }}
+            </v-btn>
+            <v-btn color="secondary" variant="tonal" @click="openDetailsDialog(p)">
+              <v-icon start>mdi-chart-line</v-icon>
+              {{ $t("actions.details") }}
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -108,5 +120,9 @@ useIntervalFn(() => {
       :patient="selectedPatient"
       :title="$t('form.titles.edit-patient')"
       @save="handleSave"
+  />
+  <patient-dialog-details
+      v-model="detailsDialogOpen"
+      :patient="selectedPatient"
   />
 </template>

@@ -46,24 +46,24 @@ watch(
     { immediate: true }
 );
 
-function addNumberEntry(type: "heartRate" | "temperature" | "oxygenSaturation") {
+const addNumberEntry = (type: "heartRate" | "temperature" | "oxygenSaturation") => {
   if (!editedPatient.value) return;
   editedPatient.value.vitals[type].push(0);
 }
-function removeNumberEntry(type: "heartRate" | "temperature" | "oxygenSaturation", index: number) {
+const removeNumberEntry = (type: "heartRate" | "temperature" | "oxygenSaturation", index: number) => {
   if (!editedPatient.value) return;
   editedPatient.value.vitals[type].splice(index, 1);
 }
-function addBPEntry() {
+const addBPEntry = () => {
   if (!editedPatient.value) return;
   editedPatient.value.vitals.bloodPressure.push({ systolic: 0, diastolic: 0 });
 }
-function removeBPEntry(index: number) {
+const removeBPEntry = (index: number) => {
   if (!editedPatient.value) return;
   editedPatient.value.vitals.bloodPressure.splice(index, 1);
 }
 
-async function handleSave() {
+const handleSave = async() => {
   if (!editedPatient.value) return;
   try {
     saving.value = true;
@@ -73,7 +73,7 @@ async function handleSave() {
     saving.value = false;
   }
 }
-function handleCancel() {
+const handleCancel = () => {
   visible.value = false;
 }
 </script>

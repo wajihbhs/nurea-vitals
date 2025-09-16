@@ -7,7 +7,9 @@
   "actions": {
     "update": "Edit",
     "cancel": "Cancel",
-    "save": "Save"
+    "save": "Save",
+    "details": "Details",
+    "close": "Close"
   },
   "views": {
     "patients": {
@@ -18,6 +20,16 @@
         "stable": "stable",
         "critical": "critical"
       }
+    }
+  },
+  "charts": {
+    "heart-rate": "Heart Rate",
+    "temperature": "Temperature",
+    "blood-pressure": "Blood Pressure",
+    "unit": {
+      "bpm": "bpm",
+      "celsius": "°C",
+      "mmHg": "mmHg"
     }
   },
   "form": {
