@@ -26,18 +26,18 @@ export const usePatientsStore = defineStore("patients", () => {
 
   async function updatePatient(updated: Patient) {
     try {
-      const res = await axios.put(`/api/patients/${updated.id}`, updated)
+      const res = await axios.put(`/api/patients/${updated.id}`, updated);
 
-      const index = patients.value.findIndex((p) => p.id === updated.id)
+      const index = patients.value.findIndex((p) => p.id === updated.id);
       if (index !== -1) {
         patients.value[index] = res.data;
         checkAlerts();
       }
 
-      return res.data
+      return res.data;
     } catch (err) {
-      console.error("Failed to update patient:", err)
-      throw err
+      console.error("Failed to update patient:", err);
+      throw err;
     }
   }
 

@@ -7,21 +7,8 @@
       "age": 14,
       "medicalRecordNumber": "MR123456",
       "vitals": {
-        "heartRate": [
-          90,
-          85,
-          88,
-          92,
-          89,
-          100
-        ],
-        "temperature": [
-          36.5,
-          36.7,
-          36.6,
-          36.8,
-          36.7
-        ],
+        "heartRate": [90, 85, 88, 92, 89, 100],
+        "temperature": [36.5, 36.7, 36.6, 36.8, 36.7],
         "bloodPressure": [
           {
             "systolic": 115,
@@ -36,14 +23,7 @@
             "diastolic": 80
           }
         ],
-        "oxygenSaturation": [
-          98,
-          97,
-          99,
-          96,
-          97,
-          100
-        ]
+        "oxygenSaturation": [98, 97, 99, 96, 97, 100]
       }
     },
     {
@@ -53,20 +33,8 @@
       "age": 60,
       "medicalRecordNumber": "MR654321",
       "vitals": {
-        "heartRate": [
-          85,
-          88,
-          90,
-          92,
-          91
-        ],
-        "temperature": [
-          38.5,
-          38.7,
-          39,
-          38.8,
-          38.9
-        ],
+        "heartRate": [85, 88, 90, 92, 91],
+        "temperature": [38.5, 38.7, 39, 38.8, 38.9],
         "bloodPressure": [
           {
             "systolic": 145,
@@ -81,13 +49,7 @@
             "diastolic": 92
           }
         ],
-        "oxygenSaturation": [
-          94,
-          93,
-          92,
-          91,
-          3
-        ]
+        "oxygenSaturation": [94, 93, 92, 91, 3]
       }
     },
     {
@@ -97,20 +59,8 @@
       "age": 70,
       "medicalRecordNumber": "MR789012",
       "vitals": {
-        "heartRate": [
-          95,
-          100,
-          98,
-          105,
-          102
-        ],
-        "temperature": [
-          39.5,
-          40,
-          39.8,
-          40.2,
-          41
-        ],
+        "heartRate": [95, 100, 98, 105, 102],
+        "temperature": [39.5, 40, 39.8, 40.2, 41],
         "bloodPressure": [
           {
             "systolic": 165,
@@ -125,13 +75,7 @@
             "diastolic": 98
           }
         ],
-        "oxygenSaturation": [
-          90,
-          89,
-          88,
-          87,
-          86
-        ]
+        "oxygenSaturation": [90, 89, 88, 87, 86]
       }
     },
     {
@@ -141,20 +85,8 @@
       "age": 35,
       "medicalRecordNumber": "M6799233",
       "vitals": {
-        "heartRate": [
-          72,
-          75,
-          70,
-          74,
-          -6
-        ],
-        "temperature": [
-          36.4,
-          36.5,
-          36.6,
-          36.5,
-          36.4
-        ],
+        "heartRate": [72, 75, 70, 74, -6],
+        "temperature": [36.4, 36.5, 36.6, 36.5, 36.4],
         "bloodPressure": [
           {
             "systolic": 125,
@@ -169,13 +101,7 @@
             "diastolic": 77
           }
         ],
-        "oxygenSaturation": [
-          98,
-          97,
-          98,
-          96,
-          97
-        ]
+        "oxygenSaturation": [98, 97, 98, 96, 97]
       }
     },
     {
@@ -185,20 +111,8 @@
       "age": 30,
       "medicalRecordNumber": "LMR6768",
       "vitals": {
-        "heartRate": [
-          70,
-          72,
-          75,
-          68,
-          70
-        ],
-        "temperature": [
-          36.6,
-          36.7,
-          36.5,
-          36.6,
-          36.7
-        ],
+        "heartRate": [70, 72, 75, 68, 70],
+        "temperature": [36.6, 36.7, 36.5, 36.6, 36.7],
         "bloodPressure": [
           {
             "systolic": 125,
@@ -213,13 +127,7 @@
             "diastolic": 79
           }
         ],
-        "oxygenSaturation": [
-          98,
-          97,
-          99,
-          96,
-          97
-        ]
+        "oxygenSaturation": [98, 97, 99, 96, 97]
       }
     },
     {
@@ -229,20 +137,8 @@
       "age": 30,
       "medicalRecordNumber": "M6755",
       "vitals": {
-        "heartRate": [
-          70,
-          72,
-          75,
-          68,
-          70
-        ],
-        "temperature": [
-          36.6,
-          36.7,
-          36.5,
-          36.6,
-          37.8
-        ],
+        "heartRate": [70, 72, 75, 68, 70],
+        "temperature": [36.6, 36.7, 36.5, 36.6, 37.8],
         "bloodPressure": [
           {
             "systolic": 70,
@@ -257,13 +153,7 @@
             "diastolic": 79
           }
         ],
-        "oxygenSaturation": [
-          98,
-          97,
-          99,
-          96,
-          97
-        ]
+        "oxygenSaturation": [98, 97, 99, 96, 97]
       }
     }
   ]

@@ -2,9 +2,9 @@
 import { ref, watch } from "vue";
 
 interface Props {
-  modelValue: boolean,
-  title?: string,
-  maxWidth?: string | number,
+  modelValue: boolean;
+  title?: string;
+  maxWidth?: string | number;
 }
 
 const props = defineProps<Props>();
@@ -13,10 +13,10 @@ const emit = defineEmits(["update:modelValue", "confirm", "cancel"]);
 const internalValue = ref(props.modelValue);
 
 watch(
-    () => props.modelValue,
-    (val) => {
-      internalValue.value = val;
-    },
+  () => props.modelValue,
+  (val) => {
+    internalValue.value = val;
+  },
 );
 
 watch(internalValue, (val) => {
@@ -49,8 +49,12 @@ const confirm = () => {
       <v-divider />
 
       <v-card-actions class="justify-center">
-        <v-btn color="grey" variant="flat" @click="close">{{ $t("actions.cancel") }}</v-btn>
-        <v-btn color="primary" variant="flat" @click="confirm">{{ $t("actions.save") }}</v-btn>
+        <v-btn color="grey" variant="flat" @click="close">{{
+          $t("actions.cancel")
+        }}</v-btn>
+        <v-btn color="primary" variant="flat" @click="confirm">{{
+          $t("actions.save")
+        }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>

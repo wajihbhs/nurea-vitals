@@ -17,11 +17,11 @@ const detailsDialogOpen = ref(false);
 const openDetailsDialog = (p: Patient) => {
   selectedPatient.value = p;
   detailsDialogOpen.value = true;
-}
+};
 const openEditDialog = (p: Patient) => {
   selectedPatient.value = p;
   editDialogOpen.value = true;
-}
+};
 const filtered = computed((): Patient[] =>
   store.patients.filter((p) => {
     const patientToSearch =
@@ -45,7 +45,7 @@ const handleSave = async (updated: Patient) => {
   } catch (err) {
     console.error("Save failed:", err);
   }
-}
+};
 
 onMounted(() => {
   store.fetchPatients();
@@ -106,7 +106,11 @@ useIntervalFn(() => {
               <v-icon start>mdi-pencil</v-icon>
               {{ $t("actions.update") }}
             </v-btn>
-            <v-btn color="secondary" variant="tonal" @click="openDetailsDialog(p)">
+            <v-btn
+              color="secondary"
+              variant="tonal"
+              @click="openDetailsDialog(p)"
+            >
               <v-icon start>mdi-chart-line</v-icon>
               {{ $t("actions.details") }}
             </v-btn>
@@ -116,13 +120,13 @@ useIntervalFn(() => {
     </v-row>
   </v-container>
   <patient-dialog-edit
-      v-model="editDialogOpen"
-      :patient="selectedPatient"
-      :title="$t('form.titles.edit-patient')"
-      @save="handleSave"
+    v-model="editDialogOpen"
+    :patient="selectedPatient"
+    :title="$t('form.titles.edit-patient')"
+    @save="handleSave"
   />
   <patient-dialog-details
-      v-model="detailsDialogOpen"
-      :patient="selectedPatient"
+    v-model="detailsDialogOpen"
+    :patient="selectedPatient"
   />
 </template>
