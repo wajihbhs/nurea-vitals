@@ -1,5 +1,80 @@
-# Vue 3 + TypeScript + Vite
+# Nurea Vitals
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Vue 3 + Vuetify 3 application for managing and monitoring patients, including interactive vital signs, charts, and forms.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+---
+
+## Technologies
+
+- Vue 3
+- Vuetify 3
+- Pinia
+- Vue Router
+- Vue-i18n
+- Apexchart
+- vue-toastification
+- Axios
+- json-server (local mock API)
+- Vitest + Testing Library
+
+---
+
+## Prerequisites
+
+- Node.js v22.14.0
+- npm v10+
+- Git
+
+---
+
+## Installation
+
+### Install dependencies
+
+From the root of your local project:
+
+```bash
+npm install
+```
+
+> ⚠️ If there is a conflict between Vuetify and vue-i18n, use:
+> ```bash
+> npm install --legacy-peer-deps
+> ```
+
+---
+
+## Local Development
+
+### Run the frontend
+
+```bash
+npm run dev
+```
+
+### Run the Mock API
+
+```bash
+npm run mock:api
+```
+
+- The API is available at `http://localhost:3333`
+- Example: `http://localhost:3333/patients`
+
+### Run frontend + Mock API in parallel (optional)
+
+```bash
+npm install concurrently --save-dev
+npm run dev:all
+```
+
+---
+
+## Build (optional)
+
+```bash
+npm run build
+```
+
+- Generates production files in the `dist/` folder
+- For local use only
