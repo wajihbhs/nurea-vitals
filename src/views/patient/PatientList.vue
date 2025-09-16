@@ -4,10 +4,17 @@ import { CRITICAL_STATUS, WATCH_STATUS } from "../../types";
 import { useIntervalFn } from "@vueuse/core";
 import { computed, onMounted, ref } from "vue";
 import { usePatientsStore } from "../../stores/patients.ts";
+import PatientDialogEdit from "./PatientDialogEdit.vue";
 
 const store = usePatientsStore();
 const search = ref("");
+const editDialogOpen = ref(false);
+const selectedPatient = ref<Patient | null>(null);
 
+const openEditDialog = (p: Patient) => {
+  selectedPatient.value = p;
+  editDialogOpen.value = true;
+}
 const filtered = computed((): Patient[] =>
   store.patients.filter((p) => {
     const patientToSearch =
@@ -24,6 +31,14 @@ const statusColor = (p: Patient) => {
       ? "orange"
       : "green";
 };
+
+const handleSave = async (updated: Patient) => {
+  try {
+    await store.updatePatient(updated);
+  } catch (err) {
+    console.error("Save failed:", err);
+  }
+}
 
 onMounted(() => {
   store.fetchPatients();
@@ -78,8 +93,20 @@ useIntervalFn(() => {
             HR: {{ store.lastVitalRate(p.vitals.heartRate) }} bpm — Temp:
             {{ store.lastVitalRate(p.vitals.temperature) }}°C
           </div>
+          <v-card-actions>
+            <v-btn color="primary" variant="tonal" @click="openEditDialog(p)">
+              <v-icon start>mdi-pencil</v-icon>
+              {{ $t("actions.update") }}
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
   </v-container>
+  <patient-dialog-edit
+      v-model="editDialogOpen"
+      :patient="selectedPatient"
+      :title="$t('form.titles.edit-patient')"
+      @save="handleSave"
+  />
 </template>

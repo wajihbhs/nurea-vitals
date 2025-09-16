@@ -4,6 +4,11 @@
     "en": "Englais",
     "fr": "Français"
   },
+  "actions": {
+    "update": "Modifier",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
+  },
   "views": {
     "patients": {
       "title": "Patients",
@@ -15,19 +20,47 @@
       }
     }
   },
+  "form": {
+    "fields": {
+      "first-name": "Prénom",
+      "last-name": "Nom",
+      "age": "Âge",
+      "medical-record-number": "Numéro de dossier médical"
+    },
+    "titles": {
+      "edit-patient": "Modifier patient",
+      "heart-rate": "Fréquence cardiaque (bpm)",
+      "temperature": "Température (°C)",
+      "blood-pressure": "Tension artérielle (systolique/diastolique)",
+      "oxygen-saturation": "Saturation en oxygène (%)"
+    },
+    "labels": {
+      "hr-x": "FC {index}",
+      "temp-x": "Temp {index}",
+      "systolic-x": "Systolique {index}",
+      "diastolic-x": "Diastolique {index}",
+      "spo2-x": "SpO₂ {index}"
+    },
+    "buttons": {
+      "add-hr": "Ajouter FC",
+      "add-temp": "Ajouter température",
+      "add-bp": "Ajouter tension",
+      "add-spo2": "Ajouter SpO₂"
+    }
+  },
   "alerts": {
     "titles": {
       "global": "Alerte critique",
       "temperature": "Alerte température",
-      "heartRate": "Alerte rythme cardiaque",
-      "bloodPressure": "Alerte tension artérielle",
+      "heart-rate": "Alerte rythme cardiaque",
+      "blood-pressure": "Alerte tension artérielle",
       "default": "Alerte"
     },
     "messages": {
       "global": "{name} est en état critique",
       "temperature": "{name} température anormale : {value}°C",
-      "heartRate": "{name} rythme cardiaque anormal : {value} bpm",
-      "bloodPressure": "{name} tension artérielle anormale : {systolic}/{diastolic}",
+      "heart-rate": "{name} rythme cardiaque anormal : {value} bpm",
+      "blood-pressure": "{name} tension artérielle anormale : {systolic}/{diastolic}",
       "default": "{name} statut anormal détecté"
     }
   }

@@ -4,6 +4,11 @@
     "en": "English",
     "fr": "French"
   },
+  "actions": {
+    "update": "Edit",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
   "views": {
     "patients": {
       "title": "Patients",
@@ -13,6 +18,34 @@
         "stable": "stable",
         "critical": "critical"
       }
+    }
+  },
+  "form": {
+    "fields": {
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "age": "Age",
+      "medical-record-number": "Medical Record Number"
+    },
+    "titles": {
+      "edit-patient": "Edit patient",
+      "heart-rate": "Heart Rate (bpm)",
+      "temperature": "Temperature (°C)",
+      "blood-pressure": "Blood Pressure (systolic/diastolic)",
+      "oxygen-saturation": "Oxygen Saturation (%)"
+    },
+    "labels": {
+      "hr-x": "HR {index}",
+      "temp-x": "Temp {index}",
+      "systolic-x": "Systolic {index}",
+      "diastolic-x": "Diastolic {index}",
+      "spo2-x": "SpO₂ {index}"
+    },
+    "buttons": {
+      "add-hr": "Add HR",
+      "add-temp": "Add Temp",
+      "add-bp": "Add Blood Pressure",
+      "add-spo2": "Add SpO₂"
     }
   },
   "alerts": {
