@@ -71,7 +71,7 @@
       "global": "{name} est en état critique",
       "temperature": "{name} température anormale : {value}°C",
       "heart-rate": "{name} rythme cardiaque anormal : {value} bpm",
-      "blood-pressure": "{name} tension artérielle anormale : {systolic}/{diastolic}",
+      "blood-pressure": "{name} tension artérielle anormale : {value}",
       "default": "{name} statut anormal détecté"
     }
   }

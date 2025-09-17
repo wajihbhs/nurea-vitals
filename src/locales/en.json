@@ -72,7 +72,7 @@
       "global": "{name} is in CRITICAL condition",
       "temperature": "{name} abnormal temperature: {value}°C",
       "heart-rate": "{name} abnormal heart rate: {value} bpm",
-      "blood-pressure": "{name} abnormal blood pressure: {systolic}/{diastolic}",
+      "blood-pressure": "{name} abnormal blood pressure: {value}",
       "default": "{name} abnormal status detected"
     }
   }
